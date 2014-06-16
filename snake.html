@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if IE 7]>   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>   <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><html class="no-js" lang="en">     <![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+        <title>Test SVG</title>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/plugins.css">
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+    </head>
+    <body>
+        <header id="header" class="full">
+            <nav class="rel wrapper">
+                <ul class="menu">
+                    <li><a href="index.html">Push Game</a></li>
+                    <li><a href="bicycle.html">Bicyle Game</a></li>
+                    <li><a href="#">Snake Game</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <button class="row center">Begin</button>
+
+            <div class="game">
+                <div class="wrap rel txtCenter">
+                    <svg id="area" width="1200" height="600">
+                        <rect x="5" y="5" fill="none" width="1190" height="590" stroke="#FFF" stroke-width="5"/>
+                        <g id="snake">
+                            <rect x="20" y="20" fill="#FFF" width="5" height="5" stroke="none"/>
+                            <rect x="26" y="20" fill="#FFF" width="5" height="5" stroke="none"/>
+                            <rect x="32" y="20" fill="#FFF" width="5" height="5" stroke="none"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="finish">
+                <div class="wonGame toHide">
+                    <h1 class="tt-1 row center">YOU WON! YAAAAY!</h1>
+                </div>
+                <div class="lostGame toHide">
+                    <h1 class="tt-1 row center">YOU LOST! BOUHOUU!</h1>
+                </div>
+                <button id="gameTwo" class="row center">Next!</button>
+            </div>
+        </main>
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="js/libs.js"></script>
+        <script src="js/gameThree.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
