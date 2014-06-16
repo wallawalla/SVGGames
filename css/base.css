@@ -1,0 +1,117 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,
+address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,
+u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,
+th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,
+output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0 none;font-size:100%;font:inherit}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{display:block}
+ol,ul,li{list-style:none;margin:0;padding:0}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+table{border-collapse:collapse;border-spacing:0}
+a:hover,a:active,a,object, embed{outline:0}
+a{text-decoration: none}
+
+img{border:0 none;-ms-interpolation-mode:bicubic}
+label{cursor:pointer}
+button, input, select, textarea {margin: 0; vertical-align: middle; *vertical-align: middle; border:0 none; outline: none;}
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0 none; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+button, input { line-height: normal; -webkit-border-radius:0}
+/*remove radius from iphone button*/
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] { -webkit-appearance: button; cursor: pointer; *overflow: visible; }
+
+/* Reset des titres */
+h1,h2,h3,h4,h5,h6,a,p,li{font-size:1em; font-weight:normal}
+
+.cf:before,.cf:after{content:"";display:table}
+.cf:after{clear:both}
+.cf{*zoom:1}
+/* ALIGNEMENT */
+.vTop{vertical-align:top}
+.vBot{vertical-align:bottom}
+.vMid{vertical-align:middle}
+/* RESET/CANCELLING */
+.resetM{margin:0}
+.resetML{margin-left:0;}
+.resetMR{margin-right:0;}
+.resetP{padding:0}
+.resetBorder{border:0 none}
+.resetBg{background:none}
+/* FLUX */
+.fright{float:right}
+.fleft{float:left}
+.clear{clear:both}
+ .iBlock{display:inline-block}
+ .ie7 .iBlock{display: inline}/*correct IE 7 bug inline-block*/
+ .iLine{display:inline}
+.row{display: block}
+/*POSITION*/
+.rel{position:relative}
+.center{margin: 0 auto}
+/*WIDTH*/
+.full{width:100%}
+.size1of2{width:50%}
+.size1of3{width:33.33333%}
+.size2of3{width:66.66666%}
+.size1of4{width:25%}
+.size3of4{width:75%}
+.size1of5{width:20%}
+.size2of5{width:40%}
+.size3of5{width:60%}
+.size4of5{width:80%}
+
+/* TEXT */
+.uppercase{text-transform:uppercase}
+.txtCenter{text-align:center}
+.txtRight{text-align:right}
+.txtLeft{text-align:left}
+.txtJustify{text-align:justify}
+.underline,u{text-decoration:underline}
+.italic,em{font-style:italic}
+.bold,b,strong{font-weight:bold}
+.small,small{font-size:80%}
+.big{font-size:120%}
+
+/* HIDDEN */
+.hidden { display: none;}
+.invisible { visibility: hidden}
+
+/*IMG*/
+img {vertical-align: middle}
+
+/*SELECTION*/
+::-moz-selection {background:#000;text-shadow: none}
+::selection { background:#000;text-shadow: none}
+
+/*AUTHOR*/
+
+*,*:before,*:after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+body {
+    font-size: 1em;
+    line-height: 1
+}

@@ -1,0 +1,52 @@
+html, body {
+    background:#000;
+    color:#FFF;
+    width:100%;
+}
+body:before {
+    content:'';
+    display:inline-block;
+    height:10%;
+    vertical-align:middle;
+}
+
+a {color:#FFF;display:block;}
+
+.wrapper {
+    margin:0 auto 20px;
+    width:900px;
+}
+.wrap {
+    display:none;
+    margin:20px 0;
+}
+.finish, .toHide {display:none;}
+
+/* HEADER */
+    #header {
+        left:0;
+        margin:20px 0;
+        padding:5px 0;
+        position:fixed;
+        top:0;
+        width:100%;
+    }
+    .menu li {
+        display:inline-block;
+        margin:0 15px;
+        vertical-align:middle;
+    }
+
+/* MAIN */
+    main {
+        display:block;
+        margin:100px 0 0;
+    }
+
+/* RAND */
+    .buttons {
+        margin:0 50px;
+    }
+    .bgCircle.on {
+        fill:#A5AAD9;
+    }

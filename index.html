@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if IE 7]>   <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>   <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>   <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><html class="no-js" lang="en">     <![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+        <title>Test SVG</title>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <link rel="stylesheet" type="text/css" href="css/plugins.css">
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+    </head>
+    <body>
+        <header id="header" class="full">
+            <nav class="rel wrapper">
+                <ul class="menu">
+                    <li><a class="tt-1" href="#">Push Game</a></li>
+                    <li><a class="tt-1" href="bicycle.html">Bicyle Game</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <button id="gameOne" class="row center">Begin</button>
+
+            <div class="game">
+                <div class="wrap rel">
+                    <svg id="rand" width="6000" height="400">
+                        <line x1="0" x2="100%" y1="100" y2="100" stroke="#FFF" stroke-width="2"></line>
+                        <g>
+                            <line x1="2000" x2="2000" y1="0" y2="200" stroke="#FFF" stroke-width="1" stroke-dasharray="10, 10"></line>
+                            <circle id="priceOne" class="bgCircle" cx="2000" cy="250" r="40" fill="#F0F2EB" stroke="#FFF" stroke-width="2"/>
+                            <text x="2000" y="250" text-anchor="middle" alignment-baseline="middle">Go!</text>
+                            <line x1="4000" x2="4000" y1="0" y2="200" stroke="#FFF" stroke-width="1" stroke-dasharray="10, 10"></line>
+                            <circle id="priceTwo" class="bgCircle" cx="4000" cy="250" r="40" fill="#F0F2EB" stroke="#FFF" stroke-width="2"/>
+                            <text x="4000" y="250" text-anchor="middle" alignment-baseline="middle">Soon</text>
+                            <line x1="6000" x2="6000" y1="0" y2="200" stroke="#FFF" stroke-width="1" stroke-dasharray="10, 10"></line>
+                            <circle id="priceThree" class="bgCircle" cx="6000" cy="250" r="40" fill="#F0F2EB" stroke="#FFF" stroke-width="2"/>
+                            <text x="6000" y="250" text-anchor="middle" alignment-baseline="middle">YAY!</text>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="wrap rel">
+                    <svg class="buttons fleft" width="100" height="100" viewBox="0 0 100 100">
+                        <circle id="button114" class="bgCircle on" cx="50" cy="50" r="48" fill="#F0F2EB" stroke="#FFF" stroke-width="2"/>
+                        <text x="50" y="50" text-anchor="middle" alignment-baseline="middle" font-size="2em">R</text>
+                    </svg>
+                    <svg class="buttons fright" width="100" height="100" viewBox="0 0 100 100">
+                        <circle id="button108" class="bgCircle" cx="50" cy="50" r="48" fill="#F0F2EB" stroke="#FFF" stroke-width="2"/>
+                        <text x="50" y="50" text-anchor="middle" alignment-baseline="middle" font-size="2em">L</text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="finish">
+                <div class="wonGame toHide">
+                    <h1 class="tt-1 row wrapper txtCenter">YOU WON <span class="price"></span>! YAAAAY!</h1>
+                </div>
+                <div class="lostGame toHide">
+                    <h1 class="tt-1 row wrapper txtCenter">YOU LOST! BOUHOUU!</h1>
+                </div>
+            </div>
+        </main>
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="js/libs.js"></script>
+        <script src="js/gameOne.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
