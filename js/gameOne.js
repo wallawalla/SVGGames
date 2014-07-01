@@ -51,14 +51,14 @@ Game = {
                 addRect();
                 if(cpt == Game.breakpoints[0]) {
                     $('#priceOne').attr('class', 'bgCircle on');
-                    Game.prize++;
+                    Game.prize = 1;
                 } else if (cpt == Game.breakpoints[1]) {
                     $('#priceTwo').attr('class', 'bgCircle on');
-                    Game.prize++;
+                    Game.prize = 2;
                 }
             } else if(cpt >= Game.endLine) {
                 fault = 0;
-                Game.prize++;
+                Game.prize = 3;
                 Game.endGame();
             } else if(e.keyCode != Game.buttonToHit) {
                 fault++;

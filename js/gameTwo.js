@@ -7,6 +7,7 @@ Game = {
     frontTyre: 45,
     bikeFactor: 1,
     timeoutHandler : null,
+    direction:'forward',
 
     initCycle: function () {
         Game.rander = Snap('#cycle');
@@ -16,46 +17,31 @@ Game = {
             cpt4 = 1;
 
         function moveBikeForward () {
-            var matrixTyreFront = new Snap.Matrix(),
-                matrixTyreBack = new Snap.Matrix(),
-                matrixBike = new Snap.Matrix(),
-                myMatrix3 = new Snap.Matrix();
-
-            matrixTyreFront.rotate((cpt * 45), Game.backTyre, 200);
-            matrixTyreBack.rotate((cpt * 45), Game.frontTyre, 200);
-            matrixBike.translate((Game.bikeFactor * 10), 0, bike, 200);
-
-            Game.rander.select('#frontTyre').animate({transform:matrixTyreBack}, 100, mina.elastic);
-            Game.rander.select('#backTyre').animate({transform:matrixTyreFront}, 100, mina.elastic);
-            Game.rander.select('#bike').animate({transform:matrixBike}, 100, mina.elastic);
+            if(Game.direction != 'forward') { cpt = 0; }
+            Game.rander.select('#frontTyre').animate({transform:'r'+(cpt*45)+','+Game.frontTyre+',200'}, 100, mina.elastic);
+            Game.rander.select('#backTyre').animate({transform:'r'+(cpt*45)+','+Game.backTyre+',200'}, 100, mina.elastic);
+            Game.rander.select('#bike').animate({transform:'t'+(Game.bikeFactor*10)+',0,'+bike+',200'}, 100, mina.elastic);
             cpt++;
             Game.bikeFactor++;
 
             if(Game.bikeFactor === (cpt3 * cpt4)) {
-                // $(window).scrollLeft((600 * cpt4));
-                myMatrix3.translate(-(700 * cpt4), 0, 3000, 212);
-                Game.rander.select("#group").animate({transform:myMatrix3}, 200, mina.easeinout);
+                // $(window).scrollLeft(800 * cpt4);
+                Game.rander.select("#group").animate({transform:'t'+(-900*cpt4)+',0,3000,212'}, 200, mina.easeinout);
                 cpt4 = cpt4 + 1;
             }
             if(cpt % 9 == 0) { cpt = 1; }
         }
 
         function moveBikeBackward () {
-            var myMatrix = new Snap.Matrix(),
-                myMatrix2 = new Snap.Matrix(),
-                myMatrix3 = new Snap.Matrix();
-
-            myMatrix.translate(-(Game.bikeFactor * 10), 0, Game.backTyre, 200).rotate(-(cpt * 45), Game.backTyre, 200);
-            myMatrix2.translate(-(Game.bikeFactor * 10), 0, Game.frontTyre, 200).rotate(-(cpt * 45), Game.frontTyre, 200);
-
-            Game.rander.select('#frontTyre').animate({transform:myMatrix2}, 100, mina.elastic);
-            Game.rander.select('#backTyre').animate({transform:myMatrix}, 100, mina.elastic);
+            if(Game.direction != 'backward') { cpt = 0; }
+            Game.rander.select('#frontTyre').animate({transform:'r'+(-cpt*45)+','+Game.backTyre+',200'}, 100, mina.elastic);
+            Game.rander.select('#backTyre').animate({transform:'r'+(cpt*45)+','+Game.frontTyre+',200'}, 100, mina.elastic);
+            // Game.rander.select('#bike').animate({transform:'t'+(-Game.bikeFactor*10)+',0,'+bike+',200'}, 100, mina.elastic);
             cpt--;
             Game.bikeFactor--;
 
             if(Game.bikeFactor === (cpt3 * cpt4)) {
-                myMatrix3.translate((700 * cpt4), 0, 3000, 212);
-                Game.rander.select("#group").animate({transform:myMatrix3}, 200, mina.easeinout);
+                Game.rander.select("#group").animate({transform:'t'+(700*cpt4)+',0,3000,212'}, 200, mina.easeinout);
                 cpt4 = cpt4 + 0.5;
             }
             if(cpt % 9 == 0) { cpt = 1; }
@@ -69,11 +55,13 @@ Game = {
             // console.log(e.keyCode);
             if(e.keyCode == 54) {
                 if(Game.bikeFactor > 395) {
-                    Game.endGame();
+                    Game.endGame(1);
                 } else {
+                    Game.direction = 'forward';
                     moveBikeForward();
                 }
             } else if(e.keyCode == 52) {
+                Game.direction = 'backward';
                 moveBikeBackward();
             }
         });
@@ -85,17 +73,13 @@ Game = {
 
         $('.game').fadeOut(function () {
             $('.finish').fadeIn();
-            if($('#priceOne').attr('class') == 'bgCircle on') {
+
+            if(won) {
                 $('.wonGame').fadeIn();
+            } else {
+                $('.lostGame').fadeIn();
             }
         });
-        if(won) {
-        } else {
-            $('.game').fadeOut(function () {
-                $('.finish').fadeIn();
-                $('.lostGame').fadeIn();
-            });
-        }
     },
 
     init: function () {

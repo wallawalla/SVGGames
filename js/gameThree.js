@@ -2,6 +2,13 @@ var Game = Game || {};
 
 Game = {
     rander: Snap('#area'),
+    cpt: 5,
+    direction: 'right',
+    velocity: 200,
+    length: 3,
+    xpos: [25,36],
+    ypos: [25,36],
+    step: 5,
 
     randPosition: function () {
         // x between 6 & 1199 / y between 6 & 589
@@ -19,44 +26,42 @@ Game = {
         });
     },
 
+    endGame: function () {
+        $('.game').fadeOut(function () {
+            $('.finish').fadeIn();
+            $('.lostGame').fadeIn();
+            // $('.wonGame').fadeIn();
+        });
+    },
+
     moveSnake: function (dir) {
-        var matrix = new Snap.Matrix(),
-            cpt = 1;
 
-        switch(dir) {
-            case 'left':
-                moveLeft();
-                break;
-            case 'right':
-                moveRight();
-                break;
-            case 'down':
-                moveDown();
-                break;
-            case 'up':
-                moveUp();
-                break;
-        }
-
-        function moveRight () {
-            matrix.translate(cpt, 0);
-            Game.rander.select('#snake').animate({transform:matrix}, 500, mina.elastic, function () {
-                cpt++;
-                moveRight();
-            });
-        }
     },
 
     bindKeys: function () {
         // 50 => 2 (down) / 52 => 4 (left) / 54 => 6 (right) / 56 => 8 (up)
         $('body').on('keypress', function (e) {
-
+            switch(e.keyCode) {
+                case 50:
+                    Game.moveSnake('down');
+                    break;
+                case 52:
+                    Game.moveSnake('left');
+                    break;
+                case 54:
+                    Game.moveSnake('right');
+                    break;
+                case 56:
+                    Game.moveSnake('up');
+                    break;
+                default:break;
+            }
         });
     },
 
     init: function () {
         Game.placeFood();
         Game.bindKeys();
-        Game.moveSnake('right');
+        // Game.moveSnake('right');
     }
 };

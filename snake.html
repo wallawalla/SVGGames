@@ -22,7 +22,7 @@
             <nav class="rel wrapper">
                 <ul class="menu">
                     <li><a href="index.html">Push Game</a></li>
-                    <li><a href="bicycle.html">Bicyle Game</a></li>
+                    <li><a href="bicycle.html">Bicycle Game</a></li>
                     <li><a href="#">Snake Game</a></li>
                 </ul>
             </nav>
@@ -36,9 +36,10 @@
                     <svg id="area" width="1200" height="600">
                         <rect x="5" y="5" fill="none" width="1190" height="590" stroke="#FFF" stroke-width="5"/>
                         <g id="snake">
-                            <rect x="20" y="20" fill="#FFF" width="10" height="10" stroke="none"/>
-                            <rect x="31" y="20" fill="#FFF" width="10" height="10" stroke="none"/>
-                            <rect x="42" y="20" fill="#FFF" width="10" height="10" stroke="none"/>
+                            <rect class="body" x="20" y="20" fill="#FFF" width="10" height="10" stroke="none"/>
+                            <rect class="body" x="31" y="20" fill="#FFF" width="10" height="10" stroke="none"/>
+                            <!-- <rect class="body" x="31" y="20" fill="#FFF" width="10" height="10" stroke="none"/> -->
+                            <!-- <rect class="body" x="42" y="20" fill="#FFF" width="10" height="10" stroke="none"/> -->
                         </g>
                     </svg>
                 </div>
@@ -51,7 +52,6 @@
                 <div class="lostGame toHide">
                     <h1 class="tt-1 row center">YOU LOST! BOUHOUU!</h1>
                 </div>
-                <button id="gameTwo" class="row center">Next!</button>
             </div>
         </main>
 
